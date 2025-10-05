@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div id="auth-container">
+    <h1>PocketWise</h1>
+    <p>Log in to manage your finances.</p>
+    <button id="login-btn">Login with Google</button>
+</div>
+
+<div id="app-container" class="hidden">
+    <header>
+        <h1>My Finances</h1>
+        <div>
+            <button id="theme-toggle" title="Toggle theme">
+                </button>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <div id="sheet-management" class="card">
+        <select id="sheet-selector"></select>
+        <button id="new-sheet-btn">+ New Sheet</button>
+    </div>
+
+    <div id="summary-section" class="card">
+    <div class="summary-card">
+        <h4>Total Income</h4>
+        <p id="total-income">₹0.00</p>
+    </div>
+    <div class="summary-card">
+        <h4>Total Expense</h4>
+        <p id="total-expense">₹0.00</p>
+    </div>
+    <div class="summary-card balance">
+        <h4>Balance</h4>
+        <p id="balance">₹0.00</p>
+    </div>
+</div>
+
+    <div class="card">
+        <h3>Add New Transaction</h3>
+        <form id="transaction-form">
+            <input type="text" id="description" placeholder="Description" required>
+            <input type="text" id="category" placeholder="e.g., Food, Salary" required>
+            <input type="number" id="amount" placeholder="Amount" step="0.01" required>
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <button type="submit">Add Transaction</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>History</h3>
+        <ul id="transaction-list">
+            </ul>
+    </div>
+
+</div>
+
+<script src="script.js" type="module"></script>
+
+</body>
+</html>

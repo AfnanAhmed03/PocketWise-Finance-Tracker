@@ -1,0 +1,293 @@
+/* style.css (New Version) */
+:root {
+    --primary-bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --primary-text: #2d3748;
+    --secondary-text: #718096;
+    --accent-blue: #4299e1;
+    --accent-red: #f56565;
+    --accent-green: #48bb78;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+#auth-container, #app-container {
+    width: 100%;
+    max-width: 700px;
+    background: transparent;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-weight: 600;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+#logout-btn {
+    background-color: var(--accent-red);
+    color: white;
+}
+#logout-btn:hover {
+    opacity: 0.85;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+#summary-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.summary-card {
+    text-align: left;
+}
+.summary-card h4 {
+    color: var(--secondary-text);
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+}
+.summary-card p {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+#total-income { color: var(--accent-green); }
+#total-expense { color: var(--accent-red); }
+#balance { color: var(--accent-blue); }
+
+#transaction-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+#transaction-form input, #transaction-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+#transaction-form input:focus, #transaction-form select:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+}
+#transaction-form button {
+    background-color: var(--accent-blue);
+    color: white;
+    justify-self: end;
+}
+#transaction-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+#transaction-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+#transaction-list li {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+#transaction-list li:last-child {
+    border-bottom: none;
+}
+#transaction-list li:hover {
+    background-color: #f7fafc;
+}
+
+.transaction-details {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.transaction-details .icon {
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.income .icon { background-color: #e6fffa; color: var(--accent-green); }
+.expense .icon { background-color: #fff5f5; color: var(--accent-red); }
+
+.text-details {
+    display: flex;
+    flex-direction: column;
+}
+.text-details span:first-child {
+    font-weight: 500;
+}
+.text-details span:last-child {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    text-transform: capitalize;
+}
+
+.transaction-amount {
+    font-weight: 500;
+    margin-right: 1.5rem;
+}
+.income .transaction-amount { color: var(--accent-green); }
+.expense .transaction-amount { color: var(--accent-red); }
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--secondary-text);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+}
+.delete-btn:hover {
+    background-color: #edf2f7;
+    color: var(--accent-red);
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- Dark Theme --- */
+body.dark-theme {
+    --primary-bg: #1a202c;
+    --card-bg: #2d3748;
+    --primary-text: #f7fafc;
+    --secondary-text: #a0aec0;
+    --border-color: #4a5568;
+}
+
+/* --- Theme Toggle Button --- */
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--secondary-text);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#theme-toggle:hover {
+    background-color: var(--primary-bg);
+}
+header > div {
+    display: flex;
+    align-items: center;
+}
+
+/* --- Smooth Transitions --- */
+body, .card, #transaction-form input, #transaction-form select {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    #app-container {
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Stack summary cards vertically */
+    #summary-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .summary-card p {
+        font-size: 1.5rem;
+    }
+
+    /* Stack form inputs vertically */
+    #transaction-form {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    #transaction-form button {
+        /* Make button full width on mobile */
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* --- Sheet Management --- */
+#sheet-management {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+#sheet-selector {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+#new-sheet-btn {
+    background-color: var(--accent-green);
+    color: white;
+    white-space: nowrap;
+}
